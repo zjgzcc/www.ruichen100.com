@@ -1,0 +1,31 @@
+extends  ../_skeleton
+
+include ../components/_ui-header-classic
+include ../components/_ui-footer-classic
+
+block variables
+  - var activeCategory = 'pages'
+  - var pageName = 'Our Solutions 2'
+
+block page 
+  // Page Header
+  +rd-navbar-header-classic({
+    logoDark: brand.default,
+    logoLight: brand.defaultInverse
+  })
+
+  +breadcrumbs({
+    category: activeCategory,
+    path: [pageName],
+    title: 'Our Solutions 2'
+  })
+
+  section.section.section-md.bg-gray-100
+    .container
+      include ../includes/_row-features-box-modern
+
+  // Page Footer
+  +footer-classic({
+    logo: brand.default,
+    text: 'Since 1999, we have been helping American businesses thrive.'
+  })

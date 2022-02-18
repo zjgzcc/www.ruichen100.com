@@ -1,0 +1,62 @@
+mixin rd-navbar-classic(obj)
+	// RD Navbar
+	.rd-navbar-wrap
+		nav.rd-navbar.rd-navbar-classic(
+		data-layout=                'rd-navbar-fixed'
+		data-sm-layout=             'rd-navbar-fixed'
+		data-md-layout=             'rd-navbar-fixed'
+		data-md-device-layout=      'rd-navbar-fixed'
+		data-lg-layout=             'rd-navbar-fixed'
+		data-lg-device-layout=      'rd-navbar-fixed'
+		data-xl-layout=             'rd-navbar-static'
+		data-xl-device-layout=      'rd-navbar-static'
+		data-xxl-layout=            'rd-navbar-static'
+		data-xxl-device-layout=     'rd-navbar-static'
+		data-lg-stick-up-offset=    '0px'
+		data-xl-stick-up-offset=    '0px'
+		data-xxl-stick-up-offset=   '0px'
+		data-lg-stick-up=           'true'
+		data-xl-stick-up=           'true'
+		data-xxl-stick-up=          'true')
+			.rd-navbar-main
+				// RD Navbar Panel
+				.rd-navbar-panel
+					// RD Navbar Toggle
+					button.rd-navbar-toggle(data-rd-navbar-toggle='.rd-navbar-nav-wrap'): span
+
+					// RD Navbar Brand
+					.rd-navbar-brand
+						a.brand(href='index.html')
+							if (typeof obj !== 'undefined' && typeof obj.logo !== 'undefined')
+								+png(obj.logo.normal)(srcset='images/' + obj.logo.retina + '.png 2x').brand-logo-dark
+							else if(typeof obj !== 'undefined' && typeof obj.logoDark !== 'undefined' && typeof obj.logoLight !== 'undefined')
+								+png(obj.logoDark.normal)(srcset='images/' + obj.logoDark.retina + '.png 2x').brand-logo-dark
+								+png(obj.logoLight.normal)(srcset='images/' + obj.logoLight.retina + '.png 2x').brand-logo-light
+							else
+								+png(brand.default.normal)(srcset='images/' + brand.default.retina + '.png 2x').brand-logo-dark
+								+png(brand.defaultInverse.normal)(srcset='images/' + brand.defaultInverse.retina + '.png 2x').brand-logo-light
+
+				.rd-navbar-nav-wrap
+					p.rd-navbar-slogan(class=(typeof obj !== 'undefined') ? obj.sloganClass: '')=brand.slogan
+					include ../includes/_navigation
+
+					// RD Navbar Search
+					a.rd-navbar-link.rd-navbar-link-1.button-winona(href=links.getTemplate target='_blank') Get the Alice
+					a.rd-navbar-link.rd-navbar-link-2.button-winona(href='contact-us.html') Contact Us
+					.rd-navbar-element.rd-navbar-element_centered
+						.group-xs
+							a.icon.icon-sm.link-social-2.mdi.mdi-facebook(href='#')
+							a.icon.icon-sm.link-social-2.mdi.mdi-twitter(href='#')
+							a.icon.icon-sm.link-social-2.mdi.mdi-instagram(href='#')
+				.rd-navbar-element.rd-navbar-element_right
+					ul.list-localization
+						li: label
+							input(name='localization' value='dt' type='radio')
+							span.label-text DT
+						li: label
+							input(name='localization' value='en' type='radio' checked)
+							span.label-text EN
+						li: label
+							input(name='localization' value='fr' type='radio')
+							span.label-text FR
+				.rd-navbar-dummy

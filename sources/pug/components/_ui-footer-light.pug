@@ -1,0 +1,17 @@
+mixin footer-light(obj)
+	footer.section.footer-light
+		.container
+			.footer-light-main
+				.brand-outer 
+					a.brand(href='index.html')
+						if (typeof obj !== 'undefined' && obj.logo !== 'undefined')
+							+png(obj.logo.normal)(srcset='images/' + obj.logo.retina + '.png 2x').brand-logo-dark
+						else
+							+png(brand.default.normal)(srcset='images/' + brand.default.retina + '.png 2x').brand-logo-dark
+
+				ul.list.footer-light-list
+					li: a(href='index.html') Home
+					li: a(href='features.html') Features
+					li: a(href='pricing.html') Pricing
+	
+				+rights

@@ -1,0 +1,31 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-header-classic
+include ../components/_ui-footer-classic
+
+block variables
+  - var activeCategory = 'pages'
+  - var pageName = 'Testimonials'
+
+block page 
+  // Page Header
+  +rd-navbar-header-classic({
+    logoDark: brand.default,
+    logoLight: brand.defaultInverse
+  })
+
+  +breadcrumbs({
+    category: activeCategory,
+    path: [pageName]
+  })
+
+  section.section.section-md.bg-gray-100.text-center
+    .container
+      include ../includes/_isotope-testimonials
+
+  // Page Footer
+  +footer-classic({
+    logo: brand.default,
+    text: 'Since 1999, we have been helping American businesses thrive.'
+  })

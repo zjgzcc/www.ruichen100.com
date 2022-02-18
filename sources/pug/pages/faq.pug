@@ -1,0 +1,247 @@
+extends  ../_skeleton
+
+include ../components/_ui-header-classic
+include ../components/_ui-footer-classic
+include ../includes/_card-faq
+
+
+block variables
+  - var activeCategory = 'pages'
+  - var pageName = 'FAQ'
+
+block page 
+  // Page Header
+  +rd-navbar-header-classic({
+    logoDark: brand.default,
+    logoLight: brand.defaultInverse
+  })
+
+  +breadcrumbs({
+    category: activeCategory,
+    path: [pageName],
+    title: 'You Have Questions. We Have Answers.',
+    customContent: true
+  })
+    p.big On this page, you can find the most frequently asked questions sent by our customers since the first day of Businet. If you can’t find the answer to your question, feel free to contact us.
+
+  section.section.section-md.bg-gray-100
+    .container
+      // Bootstrap tabs
+      #tabs-faq.tabs-custom.tabs-vertical.tabs-line.tabs-line-responsive.flex-md-row-reverse
+        // Nav tabs 
+        .nav-tabs-outer
+          .stuck-navbar.stuck-2.navbar(data-navbar='{ "stuck": { "container": "#tabs-faq", "offsetRef": ".rd-navbar-panel"}, "anchor": false }' )
+            .navbar-inner
+              button.tabs-line-toggle#toggle(data-multitoggle='#tabs-faq-nav' data-scope='#toggle')
+                | Filter
+                span.icon.mdi.mdi-chevron-down
+              ul.nav.nav-tabs#tabs-faq-nav
+                li.nav-item(role='presentation'): a.nav-link.active(href='#tabs-faq-1' data-bs-toggle='tab'): span General
+                li.nav-item(role='presentation'): a.nav-link(href='#tabs-faq-2' data-bs-toggle='tab'): span Our Solutions
+                li.nav-item(role='presentation'): a.nav-link(href='#tabs-faq-3' data-bs-toggle='tab'): span Our Experience
+                li.nav-item(role='presentation'): a.nav-link(href='#tabs-faq-4' data-bs-toggle='tab'): span Customer Service
+                li.nav-item(role='presentation'): a.nav-link(href='#tabs-faq-5' data-bs-toggle='tab'): span Business Planning
+                li.nav-item(role='presentation'): a.nav-link(href='#tabs-faq-6' data-bs-toggle='tab'): span Support
+
+        // Tab panes
+        .tab-content
+          div#tabs-faq-1.tab-pane.fade.show.active
+            // Bootstrap Collapse
+            #accordion1.card-group-custom.card-group-classic(role='tablist' aria-multiselectable='false')
+              +card-faq({
+                number: 1,
+                parentId: 'accordion1',
+                active: true
+              })
+              +card-faq({
+                number: 2,
+                parentId: 'accordion1'
+              })
+              +card-faq({
+                number: 3,
+                parentId: 'accordion1'
+              })
+              +card-faq({
+                number: 4,
+                parentId: 'accordion1'
+              })
+              +card-faq({
+                number: 5,
+                parentId: 'accordion1'
+              })
+              +card-faq({
+                number: 6,
+                parentId: 'accordion1'
+              })
+              +card-faq({
+                number: 7,
+                parentId: 'accordion1'
+              })
+
+          div#tabs-faq-2.tab-pane.fade
+            // Bootstrap Collapse
+            #accordion2.card-group-custom.card-group-classic(role='tablist' aria-multiselectable='false')
+              +card-faq({
+                number: 7,
+                parentId: 'accordion2',
+                active: true
+              })
+              +card-faq({
+                number: 5,
+                parentId: 'accordion2'
+              })
+              +card-faq({
+                number: 4,
+                parentId: 'accordion2'
+              })
+              +card-faq({
+                number: 3,
+                parentId: 'accordion2'
+              })
+              +card-faq({
+                number: 2,
+                parentId: 'accordion2'
+              })
+              +card-faq({
+                number: 6,
+                parentId: 'accordion2'
+              })
+              +card-faq({
+                number: 1,
+                parentId: 'accordion2'
+              })
+
+          div#tabs-faq-3.tab-pane.fade
+            // Bootstrap Collapse
+            #accordion3.card-group-custom.card-group-classic(role='tablist' aria-multiselectable='false')
+              +card-faq({
+                number: 6,
+                parentId: 'accordion3',
+                active: true
+              })
+              +card-faq({
+                number: 3,
+                parentId: 'accordion3'
+              })
+              +card-faq({
+                number: 5,
+                parentId: 'accordion3'
+              })
+              +card-faq({
+                number: 1,
+                parentId: 'accordion3'
+              })
+              +card-faq({
+                number: 7,
+                parentId: 'accordion3'
+              })
+              +card-faq({
+                number: 2,
+                parentId: 'accordion3'
+              })
+              +card-faq({
+                number: 4,
+                parentId: 'accordion3'
+              })
+
+          div#tabs-faq-4.tab-pane.fade
+            // Bootstrap Collapse
+            #accordion4.card-group-custom.card-group-classic(role='tablist' aria-multiselectable='false')
+              +card-faq({
+                number: 5,
+                parentId: 'accordion4',
+                active: true
+              })
+              +card-faq({
+                number: 4,
+                parentId: 'accordion4'
+              })
+              +card-faq({
+                number: 7,
+                parentId: 'accordion4'
+              })
+              +card-faq({
+                number: 1,
+                parentId: 'accordion4'
+              })
+              +card-faq({
+                number: 6,
+                parentId: 'accordion4'
+              })
+              +card-faq({
+                number: 3,
+                parentId: 'accordion4'
+              })
+              +card-faq({
+                number: 2,
+                parentId: 'accordion4'
+              })
+
+          div#tabs-faq-5.tab-pane.fade
+            // Bootstrap Collapse
+            #accordion5.card-group-custom.card-group-classic(role='tablist' aria-multiselectable='false')
+              +card-faq({
+                number: 4,
+                parentId: 'accordion5',
+                active: true
+              })
+              +card-faq({
+                number: 2,
+                parentId: 'accordion5'
+              })
+              +card-faq({
+                number: 3,
+                parentId: 'accordion5'
+              })
+              +card-faq({
+                number: 7,
+                parentId: 'accordion5'
+              })
+              +card-faq({
+                number: 6,
+                parentId: 'accordion5'
+              })
+              +card-faq({
+                number: 1,
+                parentId: 'accordion5'
+              })
+              +card-faq({
+                number: 5,
+                parentId: 'accordion5'
+              })
+
+          div#tabs-faq-6.tab-pane.fade
+            // Bootstrap Collapse
+            #accordion6.card-group-custom.card-group-classic(role='tablist' aria-multiselectable='false')
+              +card-faq({
+                number: 5,
+                parentId: 'accordion6',
+                active: true
+              })
+              +card-faq({
+                number: 2,
+                parentId: 'accordion6'
+              })
+              +card-faq({
+                number: 1,
+                parentId: 'accordion6'
+              })
+              +card-faq({
+                number: 6,
+                parentId: 'accordion6'
+              })
+              +card-faq({
+                number: 4,
+                parentId: 'accordion6'
+              })
+              +card-faq({
+                number: 7,
+                parentId: 'accordion6'
+              })
+              +card-faq({
+                number: 3,
+                parentId: 'accordion6'
+              })
+
+  // Page Footer
+  +footer-classic

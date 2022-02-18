@@ -1,0 +1,48 @@
+extends  ../_skeleton
+
+
+block variables
+  - var activeCategory = 'pages'
+  - var pageName = 'Register'
+
+block page 
+
+  section.section.section-layout-3-outer: .section-layout-3
+    .layout-2.section-layout-3-header: .layout-2-inner
+      .layout-2-item
+        a.link.link-icon.link-icon-left(href='index.html')
+          span.icon.mdi.mdi-arrow-left
+          span Back to Home
+
+      .layout-2-item
+        p.text-1
+          span Already have an account?
+          a.text-accent(href='login.html') Log in
+
+
+    .section-layout-3-main: .section-1.text-center
+      .container
+        .box-shadow-1
+          +logo
+
+          p.text-gray-900: span(style='max-width: 400px') Register a free account on our website to experience the amazing solutions of Businet.
+          .box-shadow-1-main
+            // RD Mailform
+            form.rd-form.rd-mailform
+              .form-wrap
+                input#register-name.form-input(type='text' name='text' data-constraints='@Required')
+                label.form-label(for='register-name') Name
+
+              .form-wrap
+                input#register-email.form-input(type='email' name='email' data-constraints='@Email @Required')
+                label.form-label(for='register-email') E-mail
+
+              .form-wrap
+                input#register-password.form-input(type='password' name='password' data-constraints='@Required')
+                label.form-label(for='register-password') Password
+
+              .form-wrap
+                button.button.button-block.button-primary.button-shadow.button-winona(type='submit') Create My Free Account
+
+              .form-wrap.text-center
+                a.link.link-underline.small(href='privacy-policy.html') Privacy Policy

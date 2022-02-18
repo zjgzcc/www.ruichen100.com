@@ -1,0 +1,172 @@
+mixin map(obj)
+	.map
+		.map-inner
+			button#map-marker-1.map-marker(data-multitoggle='#world-map-popup-1' data-scope='#map-marker-1, .map-popup' style='left: 20%; top: 39%;')
+			button#map-marker-2.map-marker(data-multitoggle='#world-map-popup-2' data-scope='#map-marker-2, .map-popup' style='left: 65%; top: 24%;')
+			button#map-marker-3.map-marker(data-multitoggle='#world-map-popup-3' data-scope='#map-marker-3, .map-popup' style='left: 53%; top: 54%;')
+			button#map-marker-4.map-marker(data-multitoggle='#world-map-popup-4' data-scope='#map-marker-4, .map-popup' style='left: 30%; top: 70%;')
+			if(typeof obj !== 'undefined')
+				case obj.style
+					when 'light'
+						img.map-image(src='images/world-map-light.svg' alt='')
+			else
+				img.map-image(src='images/world-map.svg' alt='')
+				
+		article.map-popup#world-map-popup-1
+			.map-popup-toggle#world-map-toggle-1(data-multitoggle='#world-map-popup-1')
+				span.icon.mdi.mdi-close
+			.map-popup-inner.map-popup-header
+				p.map-popup-location USA
+				p.map-popup-meta 500,000 Customers
+			.map-popup-inner.map-popup-main
+				// Owl Carousel
+				.owl-carousel(
+				data-items='1'
+				data-dots='true'
+				data-nav='false'
+				data-stage-padding='0'
+				data-loop='true'
+				data-margin='30'
+				data-mouse-drag='false')
+					blockquote.quote-minimal
+						.quote-minimal-text: p #[a(href='#') #alice_app] is awesome! I use it a lot to manage my startup even when I’m not at the office.
+						.quote-minimal-meta
+							+jpg('testimonials-6-74x74').quote-minimal-avatar
+							.quote-minimal-meta-main
+								cite.quote-minimal-cite.heading-5 Jack Oliver
+								p.quote-minimal-position Customer
+
+					blockquote.quote-minimal
+						.quote-minimal-text: p Every complex project that my company deals with can now be easily managed via #[a(href='#') #alice_app]
+						.quote-minimal-meta
+							+jpg('testimonials-2-74x74').quote-minimal-avatar
+							.quote-minimal-meta-main
+								cite.quote-minimal-cite.heading-5 Peter Wilson
+								p.quote-minimal-position Customer
+
+					blockquote.quote-minimal
+						.quote-minimal-text: p I discovered #[a(href='#') #alice_app] a year ago and got instantly attracted by its numerous wonderful features.
+						.quote-minimal-meta
+							+jpg('testimonials-4-74x74').quote-minimal-avatar
+							.quote-minimal-meta-main
+								cite.quote-minimal-cite.heading-5 James Anderson
+								p.quote-minimal-position Customer
+		article.map-popup#world-map-popup-2
+			.map-popup-toggle#world-map-toggle-2(data-multitoggle='#world-map-popup-2')
+				span.icon.mdi.mdi-close
+			.map-popup-inner.map-popup-header
+				p.map-popup-location Russia
+				p.map-popup-meta 250,000 Customers
+			.map-popup-inner.map-popup-main
+				// Owl Carousel
+				.owl-carousel(
+				data-items='1'
+				data-dots='true'
+				data-nav='false'
+				data-stage-padding='0'
+				data-loop='true'
+				data-margin='30'
+				data-mouse-drag='false')
+					blockquote.quote-minimal
+						.quote-minimal-text: p I discovered #[a(href='#') #alice_app] a year ago and got instantly attracted by its numerous wonderful features.
+						.quote-minimal-meta
+							+jpg('testimonials-4-74x74').quote-minimal-avatar
+							.quote-minimal-meta-main
+								cite.quote-minimal-cite.heading-5 James Anderson
+								p.quote-minimal-position Customer
+
+					blockquote.quote-minimal
+						.quote-minimal-text: p #[a(href='#') #alice_app] is awesome! I use it a lot to manage my startup even when I’m not at the office.
+						.quote-minimal-meta
+							+jpg('testimonials-6-74x74').quote-minimal-avatar
+							.quote-minimal-meta-main
+								cite.quote-minimal-cite.heading-5 Jack Oliver
+								p.quote-minimal-position Customer
+
+					blockquote.quote-minimal
+						.quote-minimal-text: p Every complex project that my company deals with can now be easily managed via #[a(href='#') #alice_app]
+						.quote-minimal-meta
+							+jpg('testimonials-2-74x74').quote-minimal-avatar
+							.quote-minimal-meta-main
+								cite.quote-minimal-cite.heading-5 Peter Wilson
+								p.quote-minimal-position Customer
+								
+		article.map-popup#world-map-popup-3
+			.map-popup-toggle#world-map-toggle-3(data-multitoggle='#world-map-popup-3')
+				span.icon.mdi.mdi-close
+			.map-popup-inner.map-popup-header
+				p.map-popup-location Egypt
+				p.map-popup-meta 120,000 Customers
+			.map-popup-inner.map-popup-main
+				// Owl Carousel
+				.owl-carousel(
+				data-items='1'
+				data-dots='true'
+				data-nav='false'
+				data-stage-padding='0'
+				data-loop='true'
+				data-margin='30'
+				data-mouse-drag='false')
+					blockquote.quote-minimal
+						.quote-minimal-text: p Every complex project that my company deals with can now be easily managed via #[a(href='#') #alice_app]
+						.quote-minimal-meta
+							+jpg('testimonials-2-74x74').quote-minimal-avatar
+							.quote-minimal-meta-main
+								cite.quote-minimal-cite.heading-5 Peter Wilson
+								p.quote-minimal-position Customer
+
+					blockquote.quote-minimal
+						.quote-minimal-text: p I discovered #[a(href='#') #alice_app] a year ago and got instantly attracted by its numerous wonderful features.
+						.quote-minimal-meta
+							+jpg('testimonials-4-74x74').quote-minimal-avatar
+							.quote-minimal-meta-main
+								cite.quote-minimal-cite.heading-5 James Anderson
+								p.quote-minimal-position Customer
+
+					blockquote.quote-minimal
+						.quote-minimal-text: p #[a(href='#') #alice_app] is awesome! I use it a lot to manage my startup even when I’m not at the office.
+						.quote-minimal-meta
+							+jpg('testimonials-6-74x74').quote-minimal-avatar
+							.quote-minimal-meta-main
+								cite.quote-minimal-cite.heading-5 Jack Oliver
+								p.quote-minimal-position Customer
+								
+		article.map-popup#world-map-popup-4
+			.map-popup-toggle#world-map-toggle-4(data-multitoggle='#world-map-popup-4')
+				span.icon.mdi.mdi-close
+			.map-popup-inner.map-popup-header
+				p.map-popup-location Brazil
+				p.map-popup-meta 150,000 Customers
+			.map-popup-inner.map-popup-main
+				// Owl Carousel
+				.owl-carousel(
+				data-items='1'
+				data-dots='true'
+				data-nav='false'
+				data-stage-padding='0'
+				data-loop='true'
+				data-margin='30'
+				data-mouse-drag='false')
+					blockquote.quote-minimal
+						.quote-minimal-text: p I discovered #[a(href='#') #alice_app] a year ago and got instantly attracted by its numerous wonderful features.
+						.quote-minimal-meta
+							+jpg('testimonials-4-74x74').quote-minimal-avatar
+							.quote-minimal-meta-main
+								cite.quote-minimal-cite.heading-5 James Anderson
+								p.quote-minimal-position Customer
+
+					blockquote.quote-minimal
+						.quote-minimal-text: p Every complex project that my company deals with can now be easily managed via #[a(href='#') #alice_app]
+						.quote-minimal-meta
+							+jpg('testimonials-2-74x74').quote-minimal-avatar
+							.quote-minimal-meta-main
+								cite.quote-minimal-cite.heading-5 Peter Wilson
+								p.quote-minimal-position Customer
+
+					blockquote.quote-minimal
+						.quote-minimal-text: p #[a(href='#') #alice_app] is awesome! I use it a lot to manage my startup even when I’m not at the office.
+						.quote-minimal-meta
+							+jpg('testimonials-6-74x74').quote-minimal-avatar
+							.quote-minimal-meta-main
+								cite.quote-minimal-cite.heading-5 Jack Oliver
+								p.quote-minimal-position Customer

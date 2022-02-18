@@ -1,0 +1,127 @@
+extends  ../_skeleton
+
+include ../components/_ui-header-classic
+include ../components/_ui-footer-classic
+
+block variables
+  - var activeCategory = 'pages'
+  - var pageName = 'Our Solutions'
+
+block page
+  // Page Header
+  +rd-navbar-header-classic({
+    logoDark: brand.default,
+    logoLight: brand.defaultInverse
+  })
+
+  +breadcrumbs({
+    category: activeCategory,
+    path: [pageName],
+    title: 'Our Solutions',
+    customContent: true
+  })
+    a.link-waypoint-icon.icon.mdi.mdi-chevron-double-down(
+    href='#main-content'
+    data-waypoint-to='#main-content'
+    data-waypoint-relative-to='.rd-navbar-panel')
+
+
+  section.section-md.bg-white#main-content
+    // Quick and Intuitive Profile Configuration in 3 steps
+    .container#features-1
+      .row.row-50.justify-content-xl-between.align-items-center
+        .col-md-8.col-lg-7.col-xl-6
+          .unit.unit-spacing-1.align-items-center
+            .unit-left: .icon.icon-style-1.mdi.mdi-comment-check-outline
+            .unit-body: h3 Business Solutions
+
+          .block-4.offset-top-4
+            p.big.text-gray-900 Est emeritis historia, cesaris. Sectams cantare in quadrata! Cum planeta peregrinationes, omnes frondatores contactus audax, fortis spatiies.
+            // Quote Light
+            blockquote.quote-light
+              .quote-light-mark.linearicons-quote-open
+              .quote-light-text: p Fidelis, brevis elevatuss grauiter acquirere de camerarius, castus brodium. Cum advena nocere, omnes demissioes vitare mirabilis.
+
+            .group-buttons-responsive.group-middle
+              a.button.button-primary.button-winona(href='login.html') Order Now
+              a.button.button-default-outline.button-winona(href='about-us.html') Learn More
+
+        .col-md-4.col-lg-5.col-xl-6
+          +jpg('features-1-538x395')
+
+    // We Have a Lot of Useful Solutions for You
+    .container#features-2
+      .row.row-50.justify-content-xl-between.align-items-center.flex-md-row-reverse
+        .col-md-8.col-lg-7.col-xl-6
+          .unit.unit-spacing-1.align-items-center
+            .unit-left: .icon.icon-style-1.mdi.mdi-account-search
+            .unit-body: h3 Market Research
+
+          .block-4.offset-top-4
+            p.big.text-gray-900 Indictio de regius lamia, pugna animalis! Albus, domesticus zetas una reperire de barbatus, festus valebat. Racanas ridetis in lentia! Ecce, salvus equiso! Fidelis, castus abactors acceleratrix prensionem de raptus, azureus lura.
+            ul.list-marked
+              li Calendar planning of business tasks
+              li Easy work with clients’ feedback
+              li Management of your company’s projects
+
+        .col-md-4.col-lg-5.col-xl-6
+          +jpg('features-2-538x395')
+
+    // Use Our Stickers to Tell About Your Emotions
+    .container#features-3
+      .row.row-50.justify-content-xl-between.align-items-center
+        .col-md-8.col-lg-7.col-xl-6
+          .unit.unit-spacing-1.align-items-center
+            .unit-left: .icon.icon-style-1.mdi.mdi-comment-text-outline
+            .unit-body: h3 Strategic Consulting
+
+          .block-4.offset-top-4
+            p.big.text-gray-900 Idoleums crescere! Adgium experimentums, tanquam nobilis mortem. Visus, hydra, et cedrium. Cum ignigena cantare, omnes calceuses examinare.
+            // Quote Light
+            blockquote.quote-light
+              .quote-light-mark.linearicons-quote-open
+              .quote-light-text: p Fidelis, brevis elevatuss grauiter acquirere de camerarius, castus brodium. Cum advena nocere, omnes demissioes vitare mirabilis.
+
+            .group-buttons-responsive.group-middle
+              a.button.button-primary.button-winona(href='login.html') Order Now
+              a.button.button-default-outline.button-winona(href='about-us.html') Learn More
+
+
+        .col-md-4.col-lg-5.col-xl-6
+          +jpg('features-3-538x395')
+
+    // Powerful Tool for Tracking the Statistics
+    .container#features-4
+      .row.row-50.justify-content-xl-between.align-items-center.flex-md-row-reverse
+        .col-md-8.col-lg-7.col-xl-6
+          .unit.unit-spacing-1.align-items-center
+            .unit-left: .icon.icon-style-1.mdi.mdi-file-chart
+            .unit-body: h3 Sales Services
+
+          .block-4.offset-top-4
+            p.big Clabulare salvus rector est. Ventus grandis vigil est. Ubi est flavum mortem? Cur sectam assimilant? Est regius burgus, cesaris. Pol. Cliniass manducare! Cum cotta mori, omnes terrores convertam teres, dexter visuses.
+            ul.list-marked
+              li Daily/Weekly sales summary
+              li Amount of converted leads
+              li Number of referrals and opened newsletters
+
+        .col-md-4.col-lg-5.col-xl-6
+          +jpg('features-4-538x395')
+
+  // 24/7 support
+  +parallax({
+    img: 'bg-image-3'
+  }).section-lg.bg-accent.bg-image.text-center(style='background-image: url(images/bg-image-1.jpg);')
+    .container
+      .row.justify-content-center
+        .col-xl-10
+      .badge 24/7 support
+      h3 Free & Responsive Support
+      p.big: span(style='max-width: 600px;') Bi-color seculas ducunt ad pes. Hercle, hydra fortis!. Est ferox pars, cesaris. Cum guttus observare, omnes vigiles vitare noster, pius hibridaes.
+      a.button.button-default.button-winona(href='#') Read More
+
+  // Page Footer
+  +footer-classic({
+    logo: brand.default,
+    text: 'Since 1999, we have been helping American businesses thrive.'
+  })

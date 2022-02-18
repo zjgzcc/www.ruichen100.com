@@ -1,0 +1,57 @@
+mixin footer-classic(obj)
+  footer.section.footer-classic(class=(typeof obj !== 'undefined' && obj.boxed) ? 'footer-classic_boxed' : '')&attributes(attributes)
+    if(typeof obj !== 'undefined' && obj.boxed)
+      .hr.container: hr
+    .footer-classic-main
+      .container: .row.row-50.justify-content-lg-between
+        .col-sm-7.col-lg-3.col-xl-2
+          a.brand(href='index.html')
+            if (typeof obj !== 'undefined' && obj.logo !== 'undefined')
+              +png(obj.logo.normal)(srcset='images/' + obj.logo.retina + '.png 2x').brand-logo-dark
+            else
+              +png(brand.default.normal)(srcset='images/' + brand.default.retina + '.png 2x').brand-logo-dark
+
+          p: span(style='max-width: 250px;')
+            = (typeof obj !== 'undefined' && obj.logo !== 'undefined') ? obj.text : 'Alice is your #1 business app for managing workflow.'
+          a.button.button-sm.button-default-outline.button-winona(href='login.html') Sign In
+
+        .col-sm-5.col-lg-3.col-xl-2
+          h4.footer-classic-title Who We Are
+          ul.list.footer-classic-list
+            li: a(href='about-us.html') About Us
+            li: a(href='careers.html') Careers
+            li: a(href='our-team.html') Our Team
+
+        .col-sm-7.col-lg-5.col-xl-3 
+          h4.footer-classic-title Quck Links
+          ul.list.footer-classic-list.footer-classic-list_2-cols
+            li: a(href='login.html') Sign Up
+            li: a(href='#') News
+            li: a(href='privacy-policy.html') Privacy policy
+            li: a(href='pricing.html') Pricing
+            li: a(href='our-solutions.html') Features
+            li: a(href='faq.html') FAQ
+            li: a(href='contact-us.html') Contacts
+
+        .col-sm-5.col-lg-9.col-xl-2
+          h4.footer-classic-title Get in Touch
+          .row.row-20.row-sm-35
+            .col-6.col-sm-12.col-lg-8.col-xl-12
+              .row.row-10.text-default
+                .col-lg-6.col-xl-12: a(href='mailto:#') info@demolink.org
+                .col-lg-6.col-xl-12: a.big(href='tel:#') +1-853-234-65
+
+            .col-6.col-sm-12.col-lg-4.col-xl-12.text-end.text-sm-start
+              .group.group-xs
+                a.link.link-social-1.mdi.mdi-twitter(href='#')
+                a.link.link-social-1.mdi.mdi-facebook(href='#')
+                a.link.link-social-1.mdi.mdi-instagram(href='#')
+
+    if(typeof obj !== 'undefined' && obj.boxed)
+      .hr.container: hr
+
+    .footer-classic-aside
+      .container
+        +rights
+
+

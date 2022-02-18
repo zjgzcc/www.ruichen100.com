@@ -1,0 +1,260 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-header-classic
+include ../components/_ui-footer-classic
+include ../components/_ui-profile-modern
+include ../components/_ui-quote-classic
+
+block variables
+  - var activeCategory = 'about-us'
+  - var pageName = 'About Us'
+
+block page 
+  // Page Header
+  +rd-navbar-header-classic({
+    logoDark: brand.default,
+    logoLight: brand.defaultInverse
+  })
+
+  +breadcrumbs({
+    category: activeCategory,
+    path: [pageName],
+    title: 'A Few Words About Businet',
+    customContent: true
+  })
+
+  // Who we Are
+  section.section
+    .container
+      .row.align-items-end.justify-content-center
+        .col-md-10.col-lg-7
+          .section-md
+            h3 We're  a Passionate Team of Business Consultants
+            p.text-gray-900 Cur domus ortum? Ferox, camerarius aususs rare talem de primus, placidus torquis. A falsis, brodium varius ventus. Historia de salvus hydra, imperium luba! Cur visus tolerare? Menss cantare! Est nobilis mens, cesaris. Castors mori, tanquam noster ionicis tormento. Lamia de primus cannabis, gratia aonides!
+            // Quote Light
+            blockquote.quote-light.quote-light_1
+              .quote-light-mark.linearicons-quote-open
+              .quote-light-text: p Fidelis, brevis elevatuss grauiter acquirere de camerarius, castus brodium. Cum advena nocere, omnes demissioes vitare mirabilis.
+
+        .col-md-10.col-lg-5.text-center
+          +jpg('about-1-379x570')
+
+  // About
+  section.section.section-md.bg-gray-100
+    .container
+      .isotope.row.row-30(data-isotope-layout='masonry' data-isotope-group='about')
+        .col-12.col-sm-6.col-md-4.isotope-item
+          .block-ratio.block-ratio-1
+            .block-ratio-dummy
+            .block-ratio-content: .box-custom-1
+              h2 12700+
+              h4 Businessmen Choose us
+
+        .col-12.col-sm-6.col-md-8.isotope-item
+          .block-ratio.block-ratio-3
+            .block-ratio-dummy
+            .block-ratio-content.bg-image(style='background-image: url(images/about-1-770x426.jpg);')
+
+        .col-12.col-sm-6.col-md-4.isotope-item
+          .block-ratio.block-ratio-2
+            .block-ratio-dummy
+            .block-ratio-content.bg-image(style='background-image: url(images/about-2-369x432.jpg);')
+
+        .col-12.col-sm-6.col-md-4.isotope-item
+          .block-ratio.block-ratio-1
+            .block-ratio-dummy
+            .block-ratio-content.bg-image(style='background-image: url(images/about-3-370x251.jpg);')
+
+        .col-12.col-sm-6.col-md-4.isotope-item
+          .block-ratio.block-ratio-1
+            .block-ratio-dummy
+            .block-ratio-content.bg-image(style='background-image: url(images/about-4-370x251.jpg);')
+
+  // Welcome to Team
+  section.section.text-center
+    .container
+      .list-blocks-outer: .list-blocks
+        .list-blocks-item: .list-blocks-item-inner
+          .list-blocks-counter
+          p.list-blocks-title Creative Space
+          p Nunquam captis agripeta. Festus, bassus historias solite talem de nobilis, teres.
+
+        .list-blocks-item: .list-blocks-item-inner
+          .list-blocks-counter
+          p.list-blocks-title Cookies
+          p Cum vox cadunt, omnes rumores manifestum primus, dexter calcariaes.
+
+        .list-blocks-item.list-blocks-item_caption: .list-blocks-item-inner
+          h3 Join Our #[br.d-none.d-sm-block] Team
+          a.button.button-secondary.button-winona(href='contact-us.html') Contact Us
+
+        .list-blocks-item: .list-blocks-item-inner
+          .list-blocks-counter
+          p.list-blocks-title Growing Career
+          p Noster, primus speciess callide imperium de secundus, altus elogium.
+
+        .list-blocks-item: .list-blocks-item-inner
+          .list-blocks-counter
+          p.list-blocks-title Benefits
+          p Cum abaculus ire, omnes orgiaes prensionem raptus, bassus zetaes.
+
+        .list-blocks-item: .list-blocks-item-inner
+          .list-blocks-counter
+          p.list-blocks-title Collaboration
+          p Cum urbs peregrinatione, omnes parses convertam germanus, fatalis danistaes.
+
+  // People Ready to Change the World
+  section.section.section-md.bg-gray-100.text-center
+    .container
+      .badge Meet Our Team
+      h3 People Ready to Help You
+      // Owl Carousel
+      .owl-carousel.owl-carousel_profile-modern(
+      data-items='1'
+      data-sm-items='2'
+      data-lg-items='3'
+      data-xl-items='4'
+      data-dots='true'
+      data-nav='false'
+      data-stage-padding='0'
+      data-loop='true'
+      data-margin='30'
+      data-mouse-drag='false')
+        +profile-modern({
+          img: 'team-1-369x315',
+          name: 'Michael Logan',
+          position: 'Managing Director'
+        })
+
+        +profile-modern({
+          img: 'team-2-369x315',
+          name: 'Jane Williams',
+          position: 'Executive Consultant'
+        })
+
+        +profile-modern({
+          img: 'team-3-369x315',
+          name: 'Gregory Smith',
+          position: 'Safety Consultant'
+        })
+
+        +profile-modern({
+          img: 'team-4-369x315',
+          name: 'Jennifer Bailey',
+          position: 'Associate Consultant'
+        })
+
+        +profile-modern({
+          img: 'team-6-369x315',
+          name: 'Larry Turner',
+          position: 'Marketing Manager'
+        })
+        +profile-modern({
+          img: 'team-5-369x315',
+          name: 'Amy Wright',
+          position: 'Accountant'
+        })
+        +profile-modern({
+          img: 'team-7-369x315',
+          name: 'Keith Watson',
+          position: 'PR Manager'
+        })
+
+        +profile-modern({
+          img: 'team-8-369x315',
+          name: 'Tina Scott',
+          position: 'Office Manager'
+        })
+
+  section.section.oh
+    .container
+      .row.justify-content-center.justify-content-lg-between
+        .col-md-10.col-lg-5.col-xl-4: .section-md
+          .badge Our History
+          h3 How We Achieved #[br.d-none.d-sm-block] Recognition
+          p.big.offset-top-3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque placerat eros ac finibus congue. Integer consectetur
+          a.button.button-primary.button-winona(href='#') Read More
+
+        .col-md-10.col-lg-7
+          // Timeline
+          .timeline-classic.timeline-classic_1
+            .timeline-classic-item: .timeline-classic-item-inner
+              .timeline-classic-item-decoration
+              p.timeline-classic-title
+                span.text-accent 1999.
+                span Our Start
+              .timeline-classic-text
+                p Pellentesque placerat eros ac finibus congue. Integer consectetur, lorem nec accumsan commodo, sem mauris
+
+            .timeline-classic-item: .timeline-classic-item-inner
+              .timeline-classic-item-decoration
+              p.timeline-classic-title
+                span.text-accent 2005.
+                span Opening New Offices
+              .timeline-classic-text
+                p Albus, emeritis hibridas hic dignus de fortis, altus orexis. Regius axonas ducunt ad historia.
+
+            .timeline-classic-item: .timeline-classic-item-inner
+              .timeline-classic-item-decoration
+              p.timeline-classic-title
+                span.text-accent 2010.
+                span Hiring Marketing Experts
+              .timeline-classic-text
+                p Sunt nomenes captis castus, azureus contencioes. Emeritis, clemens rumors satis amor de pius, mirabilis.
+
+            .timeline-classic-item: .timeline-classic-item-inner
+              .timeline-classic-item-decoration
+              p.timeline-classic-title
+                span.text-accent 2018.
+                span Better Solutions for Clients
+              .timeline-classic-text
+                p Camerarius species vix quaestios historia est. Camerarius, bassus tumultumques saepe gratia de teres.
+
+
+  // Testimonials
+  .section-lg.bg-accent.text-center
+    .container
+      .badge Testimonials
+      h3 What Users Think About Businet
+      .owl-carousel.owl-carousel_type-1(
+      data-items='1'
+      data-dots='true'
+      data-nav='true'
+      data-stage-padding='0'
+      data-loop='true'
+      data-margin='30'
+      data-mouse-drag='false')
+        +quote-classic({
+          avatar: 'testimonials-1-102x102',
+          cite: 'Alice Doe',
+          position: 'Regular Customer'
+        })
+          p Zirbuss resistere, tanquam grandis pars. A falsis, castor clemens competition. Devatio noceres, tanquam camerarius ratione. Persuadere saepe ducunt ad lotus detrius. Medicinas volare in tubinga! Cum fides mori, omnes ignigenaes acquirere teres, bi-color elevatuses.
+
+        +quote-classic({
+          avatar: 'testimonials-2-102x102',
+          cite: 'John Williams',
+          position: 'Regular Customer'
+        })
+          p Ubi est clemens usus? Cursuss peregrinatione in nobilis avenio! Volare ducunt ad ignigena. Amors potus! Mirabilis sectam nunquam manifestums cursus est. Ferox, azureus sagas mechanice quaestio de #[a(href='#') #businet] peritus, domesticus accola.
+
+        +quote-classic({
+          avatar: 'testimonials-3-102x102',
+          cite: 'Scott Johnson',
+          position: 'Regular Customer'
+        })
+          p Est audax lanista, cesaris. Nunquam acquirere #[a(href='#') #businet] diatria. Repressors ire! Cum planeta credere, omnes candidatuses demitto lotus, castus nixes. Galluss ridetis, tanquam teres fraticinida. Acipenser de teres hydra, reperire vox.
+
+  // Our Investors
+  section.section.section-md.bg-gray-100.text-center
+    .container
+      .badge Who We work With
+      h3 Our Partners
+      include ../includes/_investors
+
+  // Page Footer
+  +footer-classic({
+    logo: brand.default,
+    text: 'Since 1999, we have been helping American businesses thrive.'
+  })

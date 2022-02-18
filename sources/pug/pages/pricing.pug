@@ -1,0 +1,53 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-header-classic
+include ../components/_ui-footer-classic
+include ../components/_ui-profile-modern
+include ../components/_ui-quote-classic
+include ../components/_ui-pricing-table-toggle
+include ../components/_ui-pricing-table-classic
+include ../components/_ui-pricing-table-creative
+
+block variables
+  - var activeCategory = 'pricing'
+  - var pageName = 'Pricing'
+
+block page 
+  // Page Header
+  +rd-navbar-header-classic({
+    logoDark: brand.default,
+    logoLight: brand.defaultInverse
+  })
+
+  +breadcrumbs({
+    category: activeCategory,
+    path: [pageName],
+    title: 'Choose a Plan That\'s Right For You\n',
+    customContent: true
+  })
+    p.big We have plans, from free to paid, that scale with your needs. #[br.d-none.d-sm-block] Subscribe to a plan that fits the size of your business.
+
+  section.section.section-2.bg-gray-100.text-center
+    .container
+      p.big.text-accent Choose a package
+      +pt-classic#pt-classic
+
+  hr
+
+  section.section.section-sm.bg-gray-100
+    .container
+      +pt-creative#pt-creative
+
+
+  hr
+
+  section.section.section-sm.bg-gray-100
+    .container
+      include ../includes/_pricing-table-modern
+
+  // Page Footer
+  +footer-classic({
+    logo: brand.default,
+    text: 'Since 1999, we have been helping American businesses thrive.'
+  })

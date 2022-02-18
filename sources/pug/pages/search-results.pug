@@ -1,0 +1,41 @@
+extends  ../_skeleton
+
+include ../components/_ui-header-classic
+include ../components/_ui-footer-classic
+
+block variables
+  - var activeCategory = 'pages'
+  - var pageName = 'Search Results'
+
+block page 
+  // Page Header
+  +rd-navbar-header-classic({
+    logoDark: brand.default,
+    logoLight: brand.defaultInverse
+  })
+
+  +breadcrumbs({
+    category: activeCategory,
+    path: [pageName]
+  })
+
+  // Search results
+  section.section.section-md
+    .container
+      // RD Search
+      form.rd-form.rd-search.form-inline(action='search-results.html' method='GET')
+        .form-wrap
+          label.form-label(for='rd-search-form-input') Search
+          input.form-input(id='rd-search-form-input' type='text' name='s' autocomplete='off')
+        .form-wrap.form-button
+          button.button.button-primary.button-shadow(type='submit') Search
+
+      .row
+        .col-lg-11.col-xl-10
+          .rd-search-results
+
+  // Page Footer
+  +footer-classic({
+    logo: brand.default,
+    text: 'Since 1999, we have been helping American businesses thrive.'
+  })

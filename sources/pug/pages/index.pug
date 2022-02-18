@@ -1,0 +1,348 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-rd-navbar-modern
+include ../components/_ui-footer-classic
+include ../components/_ui-quote-classic
+include ../components/_ui-pricing-table-toggle
+include ../components/_ui-pricing-table-creative
+include ../includes/_card-faq
+include ../components/_ui-profile-modern
+
+block variables
+  - var activeCategory = 'home'
+  - var pageName = 'Home'
+
+block page
+  // Page Header
+  header.section.page-header.page-header-2
+    +parallax({
+      img: 'bg-image-6-1'
+    }).context-dark
+      +rd-navbar-modern({
+        logoDark: brand.default,
+        logoLight: brand.defaultInverse
+      })
+
+      // FScreen
+      .page-header-2-inner
+        .container
+          .block-custom
+            h2.fw-extra-black.wow.clipInLeft(data-wow-delay='.1s') Professional Business Consulting
+            h4.text-default.wow.clipInLeft(data-wow-delay='.1s') Businet provides reliable business planning, management, and advisory services backed by years of experience in the industry.
+            .group-xl.group-middle
+              div: a.button.button-lg.button-white.button-shadow.button-winona.wow.clipInLeft(href='about-us.html' data-wow-delay='.2s') Read more
+              div: a.button.button-lg.button-primary.button-shadow.button-winona.wow.clipInLeft(href='contact-us.html' data-wow-delay='.2s') Contact us
+
+  // Meet Alice
+  section.section.section-md.bg-gray-100.text-center
+    .container
+      .badge.wow.fadeIn Our Services
+      h3.wow.fadeIn What We Do
+      .row.row-30.row-xl-60
+        .col-sm-6.col-lg-4
+          // Box Modern
+          article.box-modern.wow.fadeIn(data-anime='circles-2')
+            .box-modern-media
+              .box-modern-icon.mdi.mdi-television-guide
+              .box-modern-circle.box-modern-circle-1
+            p.box-modern-title Market Analysis
+            .box-modern-text
+              p We support your business with fact-based market research.
+        .col-sm-6.col-lg-4
+          // Box Modern
+          article.box-modern.wow.fadeIn(data-anime='circles-2')
+            .box-modern-media
+              .box-modern-icon.mdi.mdi-elevation-rise
+              .box-modern-circle.box-modern-circle-1
+            p.box-modern-title Funds Management
+            .box-modern-text
+              p Allowing you to successfully deal with your company’s funds.
+        .col-sm-6.col-lg-4
+          // Box Modern
+          article.box-modern.wow.fadeIn(data-anime='circles-2')
+            .box-modern-media
+              .box-modern-icon.mdi.mdi-presentation
+              .box-modern-circle.box-modern-circle-1
+            p.box-modern-title PR & Marketing
+            .box-modern-text
+              p Helping clients expand awareness and manage their reputation.
+        .col-sm-6.col-lg-4
+          // Box Modern
+          article.box-modern.wow.fadeIn(data-anime='circles-2')
+            .box-modern-media
+              .box-modern-icon.mdi.mdi-format-list-numbers
+              .box-modern-circle.box-modern-circle-1
+            p.box-modern-title Business Planning
+            .box-modern-text
+              p Creating an efficient business plan designed to fit your company.
+        .col-sm-6.col-lg-4
+          // Box Modern
+          article.box-modern.wow.fadeIn(data-anime='circles-2')
+            .box-modern-media
+              .box-modern-icon.mdi.mdi-magnify
+              .box-modern-circle.box-modern-circle-1
+            p.box-modern-title Audit
+            .box-modern-text
+              p Deep and detailed investigation of your company’s activity.
+        .col-sm-6.col-lg-4
+          // Box Modern
+          article.box-modern.wow.fadeIn(data-anime='circles-2')
+            .box-modern-media
+              .box-modern-icon.mdi.mdi-message-text-outline
+              .box-modern-circle.box-modern-circle-1
+            p.box-modern-title Consulting
+            .box-modern-text
+              p Focusing on our clients’ most critical issues and opportunities.
+
+
+  // About App
+  section.section.section-xl.bg-accent
+    .container
+      .row.row-50.justify-content-center.flex-lg-row-reverse.align-items-center.justify-content-lg-between
+        .col-sm-10.col-lg-5.wow.fadeInRightSmall
+          .badge About Businet
+          h3 A Few Words About Us
+          p.big.inset-2 Our consulting company is a leading firm of business managers and advisors with offices across the USA. We aim to provide you:
+          ul.list-marked
+            li Quality research & analysis
+            li Business advisory experience
+            li Reliable company management
+          a.button.button-primary.button-shadow.button-winona.fw-sbold(href='about-us.html') Read more
+
+        .col-sm-10.col-lg-6.wow.fadeInLeftSmall
+          include ../includes/_thumbnail-classy
+
+  // Features
+  section.section.section-lg
+    .container
+      .row.row-50
+        .col-sm-10.col-lg-5.wow.fadeInRightSmall
+          .badge why us
+          h3 Reasons People
+            br
+            | Choose Businet
+          p.big.inset-3(style='letter-spacing: .025em').
+            We believe there are many good reasons for you to want to choose us for your business consulting purposes. Here are some of them:
+          ul.list-marked
+            li Qualified team
+            li 15+ years of expertise
+            li Flexibility and dedication
+
+
+        .col-sm-10.col-lg-7.wow.fadeInLeftSmall.text-center
+          +png('home-01-610x432')(class='img-custom')
+
+
+  // About our messenger
+  +parallax({
+    img: 'bg-image-4'
+  })#about-us.section-md.bg-accent
+    .container
+      .row.row-50.justify-content-end
+        .col-md-8.col-lg-7.col-xl-6: .block-5.wow.clipInLeft
+          .badge.wow.clipInLeft What We Work On
+          h3.wow.clipInLeft(data-wow-delay='.1s')
+            span Browse Our Latest
+            br
+            span.text-accent Consulting Projects
+          p.big.wow.clipInLeft.inset-3(data-wow-delay='.2s') Our team has worked on a wide variety of consulting and management projects since our establishment. Take a look at some of them in our project gallery.
+          a.button.button-default.button-winona.wow.clipInLeft.fw-sbold(href='login.html' data-wow-delay='.3s') View Gallery
+
+
+  // People Ready to Change the World
+  section.section.section-md.text-center.bg-white
+    .container
+      .badge Meet our team
+      h3 Our Professional Team
+      // Owl Carousel
+      .owl-carousel.owl-carousel_profile-modern(
+      data-items='1'
+      data-sm-items='2'
+      data-lg-items='3'
+      data-xl-items='4'
+      data-dots='true'
+      data-nav='false'
+      data-stage-padding='0'
+      data-loop='true'
+      data-margin='30'
+      data-mouse-drag='false')
+        +profile-modern({
+          img: 'team-1-369x315',
+          name: 'Michael Logan',
+          position: 'Managing Director'
+        })
+
+        +profile-modern({
+          img: 'team-2-369x315',
+          name: 'Jane Williams',
+          position: 'Executive Consultant'
+        })
+
+        +profile-modern({
+          img: 'team-3-369x315',
+          name: 'Gregory Smith',
+          position: 'Safety Consultant'
+        })
+
+        +profile-modern({
+          img: 'team-4-369x315',
+          name: 'Jennifer Bailey',
+          position: 'Associate Consultant'
+        })
+
+        +profile-modern({
+          img: 'team-6-369x315',
+          name: 'Larry Turner',
+          position: 'Marketing Manager'
+        })
+        +profile-modern({
+          img: 'team-5-369x315',
+          name: 'Amy Wright',
+          position: 'Accountant'
+        })
+        +profile-modern({
+          img: 'team-7-369x315',
+          name: 'Keith Watson',
+          position: 'PR Manager'
+        })
+
+        +profile-modern({
+          img: 'team-8-369x315',
+          name: 'Tina Scott',
+          position: 'Office Manager'
+        })
+
+  // Popular questions
+  section.section.section-md.bg-gray-100
+    .container
+      // Bootstrap tabs
+      #tabs-faq.tabs-custom.tabs-vertical.tabs-line.tabs-line-1.tabs-line-responsive
+        // Nav tabs
+        .nav-tabs-outer
+          .badge Popular questions
+          h3 FAQ
+          #navba.stuck-navbar.stuck-2.navbar(data-navbar='{ "stuck": { "container": "#tabs-faq", "offsetRef": ".rd-navbar-panel"}, "anchor": false }' )
+            .navbar-inner
+              button.tabs-line-toggle#toggle(data-multitoggle='#tabs-faq-nav' data-scope='#toggle')
+                | Filter
+                span.icon.mdi.mdi-chevron-down
+              ul.nav.nav-tabs#tabs-faq-nav
+                li.nav-item(role='presentation'): a.nav-link.active(href='#tabs-faq-1' data-bs-toggle='tab'): span General
+                li.nav-item(role='presentation'): a.nav-link(href='#tabs-faq-2' data-bs-toggle='tab'): span Our Solutions
+                li.nav-item(role='presentation'): a.nav-link(href='#tabs-faq-3' data-bs-toggle='tab'): span Our Experience
+                li.nav-item(role='presentation'): a.nav-link(href='#tabs-faq-4' data-bs-toggle='tab'): span Customer Service
+
+        // Tab panes
+        .tab-content
+          div#tabs-faq-1.tab-pane.fade.show.active
+            // Bootstrap Collapse
+            #accordion1.card-group-custom.card-group-classic(role='tablist' aria-multiselectable='false')
+              +card-faq({
+                number: 5,
+                parentId: 'accordion1',
+                active: true
+              })
+              +card-faq({
+                number: 2,
+                parentId: 'accordion1'
+              })
+              +card-faq({
+                number: 3,
+                parentId: 'accordion1'
+              })
+              +card-faq({
+                number: 4,
+                parentId: 'accordion1'
+              })
+
+          div#tabs-faq-2.tab-pane.fade
+            // Bootstrap Collapse
+            #accordion2.card-group-custom.card-group-classic(role='tablist' aria-multiselectable='false')
+              +card-faq({
+                number: 7,
+                parentId: 'accordion2',
+                active: true
+              })
+              +card-faq({
+                number: 5,
+                parentId: 'accordion2'
+              })
+              +card-faq({
+                number: 3,
+                parentId: 'accordion2'
+              })
+              +card-faq({
+                number: 1,
+                parentId: 'accordion2'
+              })
+
+          div#tabs-faq-3.tab-pane.fade
+            // Bootstrap Collapse
+            #accordion3.card-group-custom.card-group-classic(role='tablist' aria-multiselectable='false')
+              +card-faq({
+                number: 6,
+                parentId: 'accordion3',
+                active: true
+              })
+              +card-faq({
+                number: 1,
+                parentId: 'accordion3'
+              })
+              +card-faq({
+                number: 7,
+                parentId: 'accordion3'
+              })
+              +card-faq({
+                number: 4,
+                parentId: 'accordion3'
+              })
+
+          div#tabs-faq-4.tab-pane.fade
+            // Bootstrap Collapse
+            #accordion4.card-group-custom.card-group-classic(role='tablist' aria-multiselectable='false')
+              +card-faq({
+                number: 2,
+                parentId: 'accordion4',
+                active: true
+              })
+              +card-faq({
+                number: 4,
+                parentId: 'accordion4'
+              })
+              +card-faq({
+                number: 1,
+                parentId: 'accordion4'
+              })
+              +card-faq({
+                number: 5,
+                parentId: 'accordion4'
+              })
+
+  // Media about us
+  section#media.section.section-md.text-center.bg-accent
+    .container
+      .badge Who We Work With
+      h3 Our Partners
+      .owl-carousel.owl-carousel-centered(
+      data-items='2'
+      data-sm-items='3'
+      data-md-items='4'
+      data-lg-items='5'
+      data-dots='true'
+      data-nav='false'
+      data-stage-padding='0'
+      data-loop='true'
+      data-margin='30'
+      data-mouse-drag='false')
+        .wow.clipInLeft: a.link-image-1(href='#'): +png('partners-1-88x77')
+        .wow.clipInLeft(data-wow-delay='.1s'): a.link-image-2(href='#'): +png('partners-2-73x78')
+        .wow.clipInLeft(data-wow-delay='.2s'): a.link-image-2(href='#'): +png('partners-3-96x62')
+        .wow.clipInLeft(data-wow-delay='.3s'): a.link-image-2(href='#'): +png('partners-4-78x80')
+        .wow.clipInLeft(data-wow-delay='.4s'): a.link-image-2(href='#'): +png('partners-5-87x76')
+
+  +footer-classic({
+    logo: brand.default,
+    text: 'Since 1999, we have been helping American businesses thrive.'
+  })
+

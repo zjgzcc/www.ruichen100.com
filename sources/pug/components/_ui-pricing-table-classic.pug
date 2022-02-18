@@ -1,0 +1,91 @@
+mixin pt-classic(obj)
+  // Pricing Table Classic
+  #pt-classic.pt-classic-group&attributes(attributes)
+    // Owl Carousel
+    .owl-carousel.owl-carousel_type-2(
+    data-items='1'
+    data-md-items='2'
+    data-lg-items='3'
+    data-dots='false'
+    data-nav='true'
+    data-stage-padding='0'
+    data-loop='false'
+    data-margin='30'
+    data-lg-margin='20'
+    data-xl-margin='30'
+    data-mouse-drag='false')
+      article.pt-classic.wow.slideInRightLg(data-wow-delay='.5s')
+        h4.pt-classic-title Basic
+        .pt-classic-price-outer
+          .pt-classic-price(aria-hidden='false')
+            .pt-classic-price-currency $
+            .pt-classic-price-value 49
+          .pt-classic-price(aria-hidden='true')
+            .pt-classic-price-currency $
+            .pt-classic-price-value 470
+
+        .pt-classic-divider
+        ul.pt-classic-list
+          li Consulting
+          li Market Analysis
+          li(aria-disabled='true') Funds Management
+          li(aria-disabled='true') PR & Marketing
+          li(aria-disabled='true') Business Planning
+          li(aria-disabled='true') Audit
+
+        .pt-classic-footer
+          a.button.button-default-outline.button-icon.button-winona(href='#') Select Package
+
+      article.pt-classic.pt-classic_preferred.wow.scaleIn
+        .pt-classic-header
+          h4.pt-classic-title
+            | Standard
+            span.pt-classic-icon
+              span.icon.mdi.mdi-heart.text-secondary
+              span.icon.mdi.mdi-heart.text-secondary
+
+          .pt-classic-price-outer
+            .pt-classic-price(aria-hidden='false')
+              .pt-classic-price-currency $
+              .pt-classic-price-value 79
+            .pt-classic-price(aria-hidden='true')
+              .pt-classic-price-currency $
+              .pt-classic-price-value 758
+
+            .badge.badge-1 Save 20%
+
+        .pt-classic-divider
+        ul.pt-classic-list
+          li Consulting
+          li Market Analysis
+          li Funds Management
+          li PR & Marketing
+          li(aria-disabled='true') Business Planning
+          li(aria-disabled='true') Audit
+
+        .pt-classic-footer
+          a.button.button-primary.button-shadow.button-icon.button-winona(href='#') Select Package
+
+          p.pt-classic-note Recommended for You
+
+      article.pt-classic.wow.slideInLeftLg(data-wow-delay='.5s')
+        h4.pt-classic-title Premium
+        .pt-classic-price-outer
+          .pt-classic-price(aria-hidden='false')
+            .pt-classic-price-currency $
+            .pt-classic-price-value 99
+          .pt-classic-price(aria-hidden='true')
+            .pt-classic-price-currency $
+            .pt-classic-price-value 950
+
+        .pt-classic-divider
+        ul.pt-classic-list
+          li Consulting
+          li Market Analysis
+          li Funds Management
+          li PR & Marketing
+          li Business Planning
+          li Audit
+
+        .pt-classic-footer
+          a.button.button-default-outline.button-icon.button-winona(href='#') Select Package

@@ -1,0 +1,153 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-header-classic
+include ../components/_ui-footer-classic
+
+block variables
+  - var activeCategory = 'pages'
+  - var pageName = 'Tables'
+
+block page
+  +rd-navbar-header-classic({
+    logoDark: brand.default,
+    logoLight: brand.defaultInverse
+  })
+
+  +breadcrumbs({
+    category: activeCategory,
+    path: [pageName]
+  })
+
+  section.section.section-md
+    .container
+      .table-outer.table-rounded.table-responsive-lg
+        table.table-custom.table-custom-primary
+          thead
+            tr
+              th Column 1
+              th Column 2
+              th Column 3
+              th Column 4
+
+          tbody
+            tr
+              td Item #1
+              td Description
+              td Subtotal
+              td $3.00
+            tr
+              td Item #2
+              td Description
+              td Discount
+              td $3.00
+            tr
+              td Item #3
+              td Description
+              td Shipping
+              td $3.00
+
+            tr
+              td Item #4
+              td Description
+              td Tax
+              td $4.00
+
+          tfoot
+            tr
+              td All Items
+              td Description
+              td Your Total
+              td $13.00
+
+  hr
+
+  section.section.section-md
+    .container
+      .table-outer.table-rounded.table-responsive-lg
+        table.table-custom.table-custom-bordered
+          thead
+            tr
+              th Column 1
+              th Column 2
+              th Column 3
+              th Column 4
+
+          tbody
+            tr
+              td Item #1
+              td Description
+              td Subtotal
+              td $3.00
+            tr
+              td Item #2
+              td Description
+              td Discount
+              td $3.00
+            tr
+              td Item #3
+              td Description
+              td Shipping
+              td $3.00
+
+            tr
+              td Item #4
+              td Description
+              td Tax
+              td $4.00
+
+          tfoot
+            tr
+              td All Items
+              td Description
+              td Your Total
+              td $13.00
+
+  hr
+
+  section.section.section-md
+    .container
+      .table-outer.table-rounded.table-responsive-lg
+        table.table-custom.table-custom-striped.table-custom-secondary
+          thead
+            tr
+              th Column 1
+              th Column 2
+              th Column 3
+              th Column 4
+
+          tbody
+            tr
+              td Item #1
+              td Description
+              td Subtotal
+              td $3.00
+            tr
+              td Item #2
+              td Description
+              td Discount
+              td $3.00
+            tr
+              td Item #3
+              td Description
+              td Shipping
+              td $3.00
+
+            tr
+              td Item #4
+              td Description
+              td Tax
+              td $4.00
+
+          tfoot
+            tr
+              td All Items
+              td Description
+              td Your Total
+              td $13.00
+
+  // Page Footer
+  +footer-classic({
+    logo: brand.default,
+    text: 'Since 1999, we have been helping American businesses thrive.'
+  })

@@ -1,0 +1,61 @@
+/** @section Progress Circle */
+
+.progress-circle {
+	display: inline-block;
+	text-align: center;
+	line-height: 1.2;
+}
+
+.progress-circle-block {
+	position: relative;
+}
+
+.progress-circle-bg {
+	fill: transparent;
+	stroke: $gray-100;
+	stroke-width: 5px;
+}
+
+.progress-circle-fg {
+	fill: transparent;
+	stroke: $primary;
+	stroke-width: 5px;
+}
+
+.progress-circle-counter {
+	position: absolute;
+	top: 50%;
+	left: 51%;
+	font-family: $font-family-sec;
+	font-size: 36px;
+	line-height: 36px;
+	transform: translate(-50%, -50%);
+	color: $gray-900;
+	font-weight: 600;
+
+	&::after {
+		content: '\0025';
+		display: inline-block;
+		margin-left: 4px;
+		opacity: .45;
+		font-size: .7em;
+	}
+}
+
+.progress-bar-circle-title {
+	font-family: $font-family-sec;
+	letter-spacing: .25em;
+	font-size: 11px;
+	font-weight: 600;
+	line-height: 1.4;
+	text-transform: uppercase;
+	color: $headings-color;
+}
+
+* + .progress-bar-circle-title { margin-top: 12px; }
+
+@include media-breakpoint-up(md) {
+	* + .progress-bar-circle-title { margin-top: 16px; }
+}
+
+

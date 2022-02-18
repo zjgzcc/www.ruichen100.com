@@ -1,0 +1,108 @@
+extends  ../_skeleton
+
+include ../components/_ui-header-classic
+include ../components/_ui-footer-classic
+
+block variables
+  - var activeCategory = 'contact-us'
+  - var pageName = 'Contact Us'
+
+block page 
+  // Page Header
+  +rd-navbar-header-classic({
+    logoDark: brand.default,
+    logoLight: brand.defaultInverse
+  })
+
+  +breadcrumbs({
+    category: activeCategory,
+    path: [pageName]
+  })
+
+  section.section.section-md
+    .container
+      .row.row-50
+        .col-xl-5: .inset-1
+          h2 Our Office
+          p.big If you are living nearby, come visit Businet at one of our comfortable offices.
+          .row.row-50
+            .col-sm-6.col-xl-12
+              p.heading-7 office 1
+              ul.list.list-style-1
+                li.unit
+                  span.unit-left.icon.icon-sm.text-accent.mdi.mdi-map-marker
+                  .unit-body: a(href='#') 9863 - 9867 Mill Road, Cambridge, MG09 99HT
+                li.unit
+                  span.unit-left.icon.icon-sm.text-accent.mdi.mdi-cellphone
+                  .unit-body: a(href='tel:#') +1 800 603 6035
+                li.unit
+                  span.unit-left.icon.icon-sm.text-accent.mdi.mdi-email-outline
+                  .unit-body: a.text-accent(href='mailto:#') mail@demolink.org
+
+            .col-sm-6.col-xl-12
+              p.heading-7 Office 2
+              ul.list.list-style-1
+                li.unit
+                  span.unit-left.icon.icon-sm.text-accent.mdi.mdi-map-marker
+                  .unit-body: a(href='#') 9870 St Vincent Place, Glasgow, DC 45 Fr 45
+                li.unit
+                  span.unit-left.icon.icon-sm.text-accent.mdi.mdi-cellphone
+                  .unit-body: a(href='tel:#') +1 800 603 6035
+                li.unit
+                  span.unit-left.icon.icon-sm.text-accent.mdi.mdi-email-outline
+                  .unit-body: a.text-accent(href='mailto:#') info@demolink.org
+
+        .col-xl-7
+          .google-map-container(
+          data-center='9870 St Vincent Place, Glasgow, DC 45 Fr 45.'
+          data-zoom='5'
+          data-styles='[{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]}]'
+          data-icon='images/gmap_marker.png'
+          data-icon-active='images/gmap_marker_active.png')
+            .google-map
+            ul.google-map-markers
+              li(
+              data-location='9870 St Vincent Place, Glasgow, DC 45 Fr 45.'
+              data-description='9870 St Vincent Place, Glasgow')
+
+  // Get in Touch
+  section.section.section-md.bg-gray-100
+    .container
+      h3.text-center Get in Touch
+      .row.justify-content-center: .col-lg-11.col-xl-9
+        // RD Mailform
+        form.rd-mailform.rd-form(
+        data-form-output='form-output-global'
+        data-form-type='contact'
+        method='post'
+        action='bat/rd-mailform.php')
+          .row.row-x-16.row-20
+            .col-md-6
+              .form-wrap
+                input#contact-name.form-input(type='text' name='name' data-constraints='@Required')
+                label.form-label(for='contact-name') Your Name
+
+            .col-md-6
+              .form-wrap
+                input#contact-email.form-input(type='email' name='email' data-constraints='@Required @Email')
+                label.form-label(for='contact-email') Email
+
+            .col-12
+              .form-wrap
+                label.form-label(for='contact-message') Message
+                textarea#contact-message.form-input(name='message' data-constraints='@Required')
+
+            .col-md-6
+              .form-wrap
+                input#contact-phone.form-input(type='text' name='phone' data-constraints='@PhoneNumber')
+                label.form-label(for='contact-phone') Phone
+
+            .col-md-6
+              .form-wrap.form-button
+                button.button.button-block.button-primary(type='submit') Send Message
+
+  // Page Footer
+  +footer-classic({
+    logo: brand.default,
+    text: 'Since 1999, we have been helping American businesses thrive.'
+  })

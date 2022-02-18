@@ -1,0 +1,21 @@
+/*
+* Images
+*/
+
+// Standard img style
+img {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+
+.img-responsive {
+  width: 100%;
+}
+
+.img-custom {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: -4px 8px 14px 2px rgba(75, 81, 91, 0.11);
+}

@@ -1,0 +1,86 @@
+extends  ../_skeleton
+
+//- Includes
+include ../components/_ui-header-classic
+include ../components/_ui-footer-classic
+include ../components/_ui-post-vacancy
+
+block variables
+  - var activeCategory = 'pages'
+  - var pageName = 'Careers'
+
+block page 
+  // Page Header
+  +rd-navbar-header-classic({
+    logoDark: brand.default,
+    logoLight: brand.defaultInverse
+  })
+
+  +breadcrumbs({
+    category: activeCategory,
+    path: [pageName],
+    title: 'Careers',
+  })
+
+  // Your Career Starts Here!
+  section.section.section-md
+    .container
+      .row.row-50.flex-lg-row-reverse.align-items-center
+        .col-md-10.col-lg-6: .inset-1
+          h3 Your Career Starts Here!
+          p.big We seek individuals who share our values as a means of reinforcing and furthering the company's successful philosophy. We can offer you:
+          ul.list-style-2.list-style-2_2-cols.block-1
+            li Creative Space
+            li Cookies
+            li Growing Career
+            li Benefits
+
+          a.button.button-primary.button-winona(href='our-team.html') Join Our Team Now
+
+        .col-lg-6
+          +jpg('careers-1-598x384').image-responsive
+
+
+  // Available Vacancies
+  section.section.section-md.bg-gray-100
+    .container
+      h3.text-center Available Vacancies
+      .row.row-30
+        .col-md-6
+          +post-vacancy({
+            title: 'Business Consultant',
+            location: 'Seattle',
+            employment: 'Full Time',
+            time: ['2018-01-01', '6 hours ago']
+          })
+
+        .col-md-6
+          +post-vacancy({
+            title: 'Financial Manager',
+            location: 'Seattle',
+            employment: 'Full Time',
+            time: ['2018-01-01', '6 hours ago']
+          })
+
+        .col-md-6
+          +post-vacancy({
+            title: 'Safety Consultant',
+            location: 'Seattle',
+            employment: 'Full Time',
+            time: ['2018-01-01', '6 hours ago']
+          })
+
+        .col-md-6
+          +post-vacancy({
+            title: 'PR Manager',
+            location: 'Seattle',
+            employment: 'Full Time',
+            time: ['2018-01-01', '6 hours ago']
+          })
+
+
+  // Page Footer
+  +footer-classic({
+    logo: brand.default,
+    text: 'Since 1999, we have been helping American businesses thrive.'
+  })

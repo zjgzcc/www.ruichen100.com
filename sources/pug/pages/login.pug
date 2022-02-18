@@ -1,0 +1,54 @@
+extends  ../_skeleton
+
+
+block variables
+  - var activeCategory = 'pages'
+  - var pageName = 'Login'
+
+block page 
+
+  section.section.section-layout-3-outer: .section-layout-3
+    .layout-2.section-layout-3-header: .layout-2-inner
+      .layout-2-item
+        a.link.link-icon.link-icon-left(href='index.html')
+          span.icon.mdi.mdi-arrow-left
+          span Back to Home
+
+      .layout-2-item
+        .layout-2-group
+          p.text-gray-900.ls-001 Don’t have an account?
+          a.button.button-sm.button-primary-outline.button-winona(href='register.html') Register
+          a.link.link-underline(href='faq.html') Need help?
+
+
+    .section-layout-3-main: .section-1.text-center
+      .container
+        .box-shadow-1
+          +logo
+
+          p.text-gray-900: span(style='max-width: 400px') Enter your e-mail and password below to log in to your account and use the benefits of our website.
+          .box-shadow-1-main
+            // RD Mailform
+            form.rd-form.rd-mailform
+              .form-wrap
+                input#login-email.form-input(type='email' name='email' data-constraints='@Email @Required')
+                label.form-label(for='login-email') E-mail
+
+              .form-wrap
+                input#login-password.form-input(type='password' name='password' data-constraints='@Required')
+                label.form-label(for='login-password') Password
+
+              .form-wrap
+                a.link.link-underline.small(href='#') I forgot my password
+
+              .form-wrap
+                button.button.button-block.button-primary.button-shadow.button-winona(type='submit') Sign In
+
+            .text-decoration-lines
+              span.text-decoration-lines-content Or log in via social networks
+
+            .group.group-xs
+              a.link.link-social-1.mdi.mdi-twitter(href='#' aria-label='Twitter')
+              a.link.link-social-1.mdi.mdi-facebook(href='#' aria-label='Facebook')
+              a.link.link-social-1.mdi.mdi-instagram(href='#' aria-label='Google+')
+              a.link.link-social-1.mdi.mdi-linkedin(href='#' aria-label='Linkedin')

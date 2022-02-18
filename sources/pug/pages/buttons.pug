@@ -1,0 +1,82 @@
+extends  ../_skeleton
+
+include ../components/_ui-header-classic
+include ../components/_ui-footer-classic
+
+block variables
+  - var activeCategory = 'pages'
+  - var pageName = 'Buttons'
+
+block page 
+  // Page Header
+  +rd-navbar-header-classic({
+    logoDark: brand.default,
+    logoLight: brand.defaultInverse
+  })
+
+  +breadcrumbs({
+    category: activeCategory,
+    path: [pageName]
+  })
+
+  // Button Sizes
+  section.section.section-md.text-center
+    .container
+      h4 Button Sizes
+      p 3 different sizes: large, default and small.
+      .group-xl.group-middle
+        .button.button-lg.button-primary.button-winona Large size
+        .button.button-primary.button-winona Default size
+        .button.button-sm.button-primary.button-winona Small size
+
+  hr
+
+  // Button Styles
+  section.section.section-md.text-center
+    .container
+      h4 Button Styles
+      p 4 different styles: primary, secondary, dark gray, primary outline and light outline
+      .group-xl.group-middle
+        .button.button-primary.button-winona Primary
+        .button.button-secondary.button-winona Secondary
+        .button.button-gray-700.button-winona Dark Gray
+        .button.button-primary-outline.button-winona Outline
+        .button.button-default-outline.button-winona Outline
+
+  hr
+
+  // Buttons with Icons
+  section.section.section-md.text-center
+    .container
+      h4 Buttons with Icons
+      p Buttons are fully integrated with 900+ icons.
+      .group-xl.group-middle
+        .button.button-icon.button-icon-right.button-gray-700.button-winona
+          span.icon.mdi.mdi-apple
+          | Icon Right
+        .button.button-icon.button-icon-right.button-secondary.button-winona
+          span.icon.mdi.mdi-google-play
+          | Icon Right
+        .button.button-icon.button-icon-left.button-default-outline.button-winona
+          span.icon.mdi.mdi-apple
+          | Icon Left
+        .button.button-icon.button-icon-left.button-default-outline.button-winona
+          span.icon.mdi.mdi-google-play
+          | Icon Left
+
+  hr
+
+  // Buttons with Shadow
+  section.section.section-md.text-center
+    .container
+      h4 Buttons with Shadow
+      p Enhance your buttons with a shadow effect.
+      .group-xl.group-middle
+        .button.button-secondary.button-shadow.button-winona Shadow
+        .button.button-ghost.button-circle.button-shadow.button-winona Shadow
+
+  // Page Footer
+  +footer-classic({
+    logo: brand.default,
+    text: 'Since 1999, we have been helping American businesses thrive.'
+  })

@@ -1,0 +1,118 @@
+extends  ../_skeleton
+
+
+include ../components/_ui-header-classic
+include ../components/_ui-footer-classic
+
+block variables
+  - var activeCategory = 'pages'
+  - var pageName = 'Typography'
+
+block page 
+  // Page Header
+  +rd-navbar-header-classic({
+    logoDark: brand.default,
+    logoLight: brand.defaultInverse
+  })
+
+  +breadcrumbs({
+    category: activeCategory,
+    path: [pageName]
+  })
+
+  // Base typography
+  section.section.section-lg
+    .container
+      .row.row-50.flex-lg-row-reverse
+        .col-lg-3.col-xl-4
+          .row.row-35.row-lg-50
+            .col-sm-6.col-lg-12
+              article.box-bordered
+                h5 Google Fonts
+                h2.fw-bold Muli
+                h4 Open Sans
+
+            .col-sm-6.col-lg-12
+              article.box-bordered
+                h5 Used colors
+                ul.list-palette
+                  +loop(5)
+                    li
+
+        .col-lg-9.col-xl-8
+          ul.list-xl
+            li
+              h1 H1 Heading
+              p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+            li
+              h2 H2 Heading
+              p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+            li
+              h3 H3 Heading
+              p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+            li
+              h4 H4 Heading
+              p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+            li
+              h5 H5 Heading
+              p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+            li
+              h6 H6 Heading
+              p Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+
+
+    // HTML Text Elements
+    .container
+      h3 HTML Text Elements
+      p.text-block
+        span.fw-bold Bold text
+        mark This is a highlighted text
+        span.text-strike This is a strickethrough text
+        span.text-underline This is an underlined text.
+        span Welcome to our wonderful world. We sincerely hope that each and every user entering our website will find exactly what he/she is looking for
+        a(href='#') Link
+        a(href='#').link-hover Hover link
+        a(href='#').link-active Press link
+        span With advanced features of activating account and new login widgets, you will definitely have a great experience of using our web page.
+        span.tooltip-custom(data-bs-toggle='tooltip' data-bs-placement='top' title='Default text') Tooltip
+
+    // Ordered & unOrdered List
+    .container
+      h3 Ordered & Unordered Lists
+      .row.row-50
+        .col-sm-6.col-md-5.col-lg-4.col-xl-3
+          ul.list-marked
+            li Bubos velum
+            li Aonidess peregrinatione
+            li Bursas cantare!
+            li Domuss potus
+            li Vortexs accelerare
+
+        .col-sm-6.col-md-5.col-lg-4.col-xl-3
+          ol.list-ordered
+            li Parmas cadunt
+            li Genetrixs ortum
+            li Fraticinidas credere
+            li Solems cantare
+            li Follas ridetis
+
+    // Blockquote
+    .container
+      h3 Blockquote
+      .row.row-50
+        .col-lg-9.col-xl-7
+          // Quote Light
+          blockquote.quote-light
+            .quote-light-mark.linearicons-quote-open
+            .quote-light-text: p Fidelis, brevis elevatuss grauiter acquirere de camerarius, castus brodium. Cum advena nocere, omnes demissioes vitare mirabilis, talis itineris tramitemes.
+
+
+  // Page Footer
+  +footer-classic({
+    logo: brand.default,
+    text: 'Since 1999, we have been helping American businesses thrive.'
+  })

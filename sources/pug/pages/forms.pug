@@ -1,0 +1,182 @@
+extends  ../_skeleton
+
+include ../components/_ui-header-classic
+include ../components/_ui-footer-classic
+
+block variables
+  - var activeCategory = 'pages'
+  - var pageName = 'Forms'
+
+block page 
+  // Page Header
+  +rd-navbar-header-classic({
+    logoDark: brand.default,
+    logoLight: brand.defaultInverse
+  })
+
+  +breadcrumbs({
+    category: activeCategory,
+    path: [pageName]
+  })
+
+  // Forms
+  section.section.section-md.text-center
+    .container
+      .box-shadow-1
+        h3 Login form
+
+        p.text-gray-900: span(style='max-width: 400px') Enter your e-mail and password below to log in to your account and use the benefits of our website.
+        .box-shadow-1-main
+          // RD Mailform
+          form.rd-form.rd-mailform
+            .form-wrap
+              input#login-email.form-input(type='email' name='email' data-constraints='@Email @Required')
+              label.form-label(for='login-email') E-mail
+
+            .form-wrap
+              input#login-password.form-input(type='password' name='password' data-constraints='@Required')
+              label.form-label(for='login-password') Password
+
+            .form-wrap
+              a.link.link-underline.small(href='#') I forgot my password
+
+            .form-wrap
+              button.button.button-block.button-secondary.button-shadow.button-winona(type='submit') Sign In
+
+          .text-decoration-lines
+            span.text-decoration-lines-content Or log in via social networks
+
+          .group.group-xs
+            a.link.link-social-1.mdi.mdi-twitter(href='#' aria-label='Twitter')
+            a.link.link-social-1.mdi.mdi-facebook(href='#' aria-label='Facebook')
+            a.link.link-social-1.mdi.mdi-instagram(href='#' aria-label='Google+')
+            a.link.link-social-1.mdi.mdi-linkedin(href='#' aria-label='Linkedin')
+
+
+  // Contact Form
+  section.section.section-md.bg-gray-100.text-center
+    .container
+      h3 Contact Form
+      .row.justify-content-center: .col-lg-11.col-xl-9
+        // RD Mailform
+        form.rd-mailform.rd-form(
+        data-form-output='form-output-global'
+        data-form-type='contact'
+        method='post'
+        action='bat/rd-mailform.php')
+          .row.row-x-16.row-20
+            .col-md-6
+              .form-wrap
+                input#contact-name.form-input(type='text' name='name' data-constraints='@Required')
+                label.form-label(for='contact-name') Your Name
+
+            .col-md-6
+              .form-wrap
+                input#contact-email.form-input(type='email' name='email' data-constraints='@Required @Email')
+                label.form-label(for='contact-email') Email
+
+            .col-12
+              .form-wrap
+                label.form-label(for='contact-message') Message
+                textarea#contact-message.form-input(name='message' data-constraints='@Required')
+
+            .col-md-6
+              .form-wrap
+                input#contact-phone.form-input(type='text' name='phone' data-constraints='@PhoneNumber')
+                label.form-label(for='contact-phone') Phone
+
+            .col-md-6
+              .form-wrap.form-button
+                button.button.button-block.button-secondary.button-winona(type='submit') Send Message
+
+  // Contact Form (with reCAPTCHA)
+  section.section.section-md.text-center
+    .container
+      h3 Contact Form (with reCAPTCHA)
+      .row.justify-content-center
+        .col-xl-10
+          // RD Mailform
+          form.rd-form.rd-mailform(
+          data-form-output='form-output-global'
+          data-form-type='contact'
+          method='post'
+          action='bat/rd-mailform.php')
+            .row.row-20.align-items-center
+              .col-lg-4
+                .form-wrap
+                  input#contact-2-name.form-input(type='text' name='name' data-constraints='@Required')
+                  label.form-label(for='contact-2-name') Your Name
+
+              .col-md-6.col-lg-4
+                .form-wrap
+                  input#contact-2-email.form-input(type='email' name='email' data-constraints='@Email @Required')
+                  label.form-label(for='contact-2-email') E-mail
+
+              .col-md-6.col-lg-4
+                .form-wrap
+                  input#contact-2-phone.form-input(type='text' name='phone' data-constraints='@PhoneNumber')
+                  label.form-label(for='contact-2-phone') Phone
+
+              .col-12
+                .form-wrap
+                  label.form-label(for='contact-2-message') Your Message
+                  textarea#contact-2-message.form-input(name='message' data-constraints='@Required')
+
+              .col-md-5
+                .form-wrap.form-validation-left
+                  // Google captcha
+                  .recaptcha#captcha1(data-sitekey='6LfZlSETAAAAAC5VW4R4tQP8Am_to4bM3dddxkEt')
+
+              .col-md-7.text-md-end
+                button.button.button-primary.button-winona(type='submit') Send Message
+
+  hr
+
+  // Subscribe to Our Newsletter
+  section.section.section-lg.bg-accent.text-center
+    .container: .row.justify-content-md-center: .col-md-10.col-lg-8.col-xl-7
+      h3 Subscribe to Our Newsletter
+      p.big Sign up to our newsletter and be the first to know about the latest company news, special offers, events, and discounts.
+
+      form.rd-form.rd-mailform.form-inline(
+      data-form-output='form-output-global'
+      data-form-type='subscribe'
+      method='post'
+      action='bat/rd-mailform.php')
+        .form-wrap
+          input.form-input(id='subscribe-form-email' type='email' name='email' data-constraints='@Email @Required')
+          label.form-label(for='subscribe-form-email') E-mail
+        .form-button
+          button.button.button-primary.button-winona(type='submit') Subscribe
+
+  // Subscribe to Our Newsletter
+  section.section.section-lg.section-decoration-1
+    .container
+      .row
+        .col-md-10.col-lg-8.col-xl-7.offset-md-1
+          h3
+            span.fw-extra-black more possibilities
+            br
+            span.fw-thin to grow your business
+          .block-3.text-start
+            p Keep up with our always upcoming business tips, news, and updates.
+            p.ot0 Enter your e-mail and subscribe to our newsletter.
+            form.rd-form.rd-mailform.form-inline-1(
+            data-form-output='form-output-1'
+            data-form-type='subscribe'
+            method='post'
+            action='bat/rd-mailform.php')
+              .form-wrap
+                input.form-input(id='subscribe-form-2-email' type='email' name='email' data-constraints='@Email @Required')
+                label.form-label(for='subscribe-form-2-email') Enter your e-mail...
+                button.button.form-button.button-primary(type='submit' aria-label='Subscribe')
+                  span.icon.form-button-icon-default.mdi.mdi-arrow-right
+                  span.icon.form-button-icon-success.mdi.mdi-check
+                  span.icon.form-button-icon-error.mdi.mdi-close
+              #form-output-1.form-output
+
+  // Page Footer
+  +footer-classic({
+    logo: brand.default,
+    text: 'Since 1999, we have been helping American businesses thrive.'
+  })
